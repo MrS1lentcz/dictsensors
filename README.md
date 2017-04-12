@@ -15,7 +15,6 @@ Motivation was to create one library with very simple usage based on python dict
 	- Python 2.6+ (tested on 2.6.9, 2.7.12) 
 	- Python 3.4+ (tested on 3.4.5, 3.5.2, 3.6-dev)
 	- Pypy (tested on pypy-5.4.1, pypy2-5.4.1, pypy3-2.4.0)
-	- CPython
 
 ### Installation
 
@@ -40,6 +39,7 @@ To be able to collect data from various sensors, a SensorReader class declaratio
 SensorsReader instance can be declared with or without a "lib_path" argument. In the second case (default) it autodetects libsensors.so automatically. You can however use your own version of the library.
 
 ```
+from sensors import SensorsReader
 reader = SensorsReader()
 print(reader.get_data())
 
@@ -56,6 +56,7 @@ The main coretemp and acpitz sensor drivers are supported but you can choose arb
 
 ```
 # Basic call
+from sensors import SensorsReader
 reader = SensorsReader()
 print(reader.get_cpu_temp())
 >>> 56.0
@@ -278,3 +279,10 @@ print(reader.get_cpu_temp(sensor='unsupported_sensor'))
 	}
 }
 ```
+
+### Licence
+MIT License Copyright (c) 2017  Jiri Dubansky
+
+### Contributors
+- [MrS1lentcz](https://github.com/MrS1lentcz) (author)
+- [Don Mums](https://github.com/don-mums)
